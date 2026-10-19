@@ -114,3 +114,13 @@ p
 a{
     color: rgb(65, 149, 65);
 }
+
+p
+{
+    color:#4caf50;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
