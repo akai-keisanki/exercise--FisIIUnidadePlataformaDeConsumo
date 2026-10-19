@@ -5,7 +5,7 @@ body
     margin: 0px;
     height: 100vh;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -16,7 +16,7 @@ h1
     width: 100%;
     padding: 0px;
     padding-top: 70px;
-    position: relative;
+    /*position: relative;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,7 +40,7 @@ img
 input
 {
     margin: 8px;
-    position: relative;
+    /*position: relative;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -100,7 +100,7 @@ p
 {
     color: rgb(244, 244, 245);
     font-size: 20px;
-    position: relative;
+    /*position: relative;*/
     top: 30px;
     background-color:  rgb(39, 39, 42);
     box-shadow: 2px 2px 2px rgb(9, 9, 11);
@@ -116,7 +116,7 @@ a{
 p
 {
     color:#4ade80;
-    position: relative;
+    /*position: relative;*/
     display: flex;
     justify-content: center;
     align-items: center;

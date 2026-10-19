@@ -1,7 +1,7 @@
 <?php
     require_once 'conexao.php';
 
-$sql = "SELECT * FROM Dispositivo ";
+$sql = "";
 
 $cod_sala = $_GET['cod_sala'] ?? null; 
 
@@ -42,6 +42,10 @@ $disps = mysqli_fetch_all($resultado, MYSQLI_ASSOC);
 <body>
     <h1>Dispositivos</h1>
 
+    <p>
+        <a href="mapa.php">Voltar para Salas</a>
+    </p>
+
     <table>
         <tr>
             <th>ID</th>
@@ -72,10 +76,6 @@ $disps = mysqli_fetch_all($resultado, MYSQLI_ASSOC);
             </tr>
         <?php endforeach; ?>
     </table>
-
-    <p>
-        <a href="salas.php">Voltar para Salas</a>
-    </p>
 </body>
 </html>
 

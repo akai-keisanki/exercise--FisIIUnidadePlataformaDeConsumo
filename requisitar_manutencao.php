@@ -18,6 +18,16 @@ if (!$id_dispositivo) {
     exit;
 }
 
+$stmt2 = mysqli_prepare($conn, "SELECT * FROM Alocacao WHERE id_dispositivo = ? ORDER BY data_instalacao DESC");
+mysqli_stmt_bind_param($stmt2, "i", $id_dispositivo);
+mysqli_stmt_execute($stmt2);
+$resultado2 = mysqli_stmt_get_result($stmt2);
+
+$alocs = mysqli_fetch_all($resultado2, MYSQLI_ASSOC);
+
+$cod_sala = $alocs[0]["cod_sala"];
+
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     function alerta($mensagem) {
@@ -83,8 +93,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1>Requisitar Manutenção</h1>
+
+    <p>
+        <a href="mapa.php">Voltar para Salas</a>
+    </p>
+
     <div>
         <form action="requisitar_manutencao.php?id_dispositivo=<?= htmlspecialchars($id_dispositivo) ?>" method="POST" target="resposta">
+            <p>ID do dispositivo: <?= htmlspecialchars($id_dispositivo) ?> (código da sala: <a href="dispositivos.php?cod_sala=<?= htmlspecialchars($cod_sala) ?>"><?= htmlspecialchars($cod_sala) ?></a>)</p>
 
             <input type="hidden" name="id_dispositivo" value="<?= htmlspecialchars($id_dispositivo) ?>">
 
@@ -118,10 +135,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             style="display:none;"
             title="Resposta da requisição"
         ></iframe>
-
-        <p>
-            <a href="mapa.php">Voltar para Salas</a>
-        </p>
     </div>
 </body>
 </html>
