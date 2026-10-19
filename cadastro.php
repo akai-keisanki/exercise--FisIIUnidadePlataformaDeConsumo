@@ -34,7 +34,6 @@ $Email = trim($_POST["Email"] ?? "");
 $Senha = $_POST["Senha"] ?? "";
 $Numero_Matricula = trim($_POST["Numero_Matricula"] ?? "");
 
-// Verificar campos vazios
 if (
     $Nome === "" ||
     $Email === "" ||
@@ -44,21 +43,17 @@ if (
     alerta("Preencha todos os campos!");
 }
 
-// Criptografar a senha
 $senhaHash = password_hash($Senha, PASSWORD_DEFAULT);
 
-// Definir perfil padrão
 $perfil = "TEC";
 
 try {
-    // Preparar comando SQL
     $sql = "INSERT INTO Usuario
             (matricula, nome, email, hash_senha, perfil)
             VALUES (?, ?, ?, ?, ?)";
 
     $stmt = $conn->prepare($sql);
 
-    // Vincular os valores
     $stmt->bind_param(
         "sssss",
         $Numero_Matricula,
@@ -68,22 +63,28 @@ try {
         $perfil
     );
 
-    // Executar cadastro
     $stmt->execute();
 
     $stmt->close();
+
+    if ($perfil == "TEC") {
+        $sql_tec = "INSERT INTO UsuarioTecnico(matricula_usuario) VALUES(?)";
+        $stmt_tec = $conn->prepare($sql_tec);
+        $stmt_tec->bind_param("s", $Numero_Matricula);
+        $stmt_tec->execute();
+        $stmt_tec->close();
+    }
+
     $conn->close();
 
-    // Avisar e redirecionar a página principal
     echo "<script>
         window.top.alert('Cadastro realizado com sucesso!');
-        window.top.location.href = '/FISICA/mapa.php';
+        window.top.location.href = '/mapa.php';
     </script>";
     exit;
 
 } catch (mysqli_sql_exception $e) {
 
-    // Registrar o erro para consulta no log do PHP
     error_log("Erro no cadastro: " . $e->getMessage());
 
     if ($e->getCode() == 1062) {
