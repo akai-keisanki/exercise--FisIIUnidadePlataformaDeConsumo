@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <h1>Manutenção de Fisica blablabla</h1> 
+    <h1>Plataforma de Manutenção e Análise de Consumo dos Dispositivos Eletrônicos do IFBA Campus Ilhéus</h1> 
 
     <p>Criar uma conta:
         <a href="cadastro.php">Cadastre-se</a>

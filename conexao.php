@@ -2,7 +2,7 @@
 $servidor = "localhost";
 $usuario = "root";
 $senha = "";
-$banco = "fisica_bd";
+$banco = "plataforma_de_consumo";
 
 $conn = mysqli_connect(
     $servidor,
