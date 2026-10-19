@@ -1,7 +1,7 @@
 <?php
     require_once 'conexao.php';
 
-$sql = "SELECT * FROM sala ORDER BY nome_sala";
+$sql = "SELECT * FROM Sala ORDER BY cod_sala";
 
 $resultado = mysqli_query($conn, $sql);
 
@@ -53,15 +53,34 @@ $salas = mysqli_fetch_all($resultado, MYSQLI_ASSOC);
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Salas e eletronicos</h1>
+    <h1>Salas</h1>
 
-    <div class="grade">
+    <table>
+        <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Ambiente</th>
+            <th>Capacidade (Pessoas)</th>
+            <th>Bloco</th>
+            <th>Andar</th>
+            <th>Area (m²)</th>
+            <th>Ações</th>
+        </tr>
         <?php foreach ($salas as $sala): ?>
-            <p>
-                <?= htmlspecialchars($sala['nome_sala']) ?>
-            </p>
+            <tr>
+                <td><?= htmlspecialchars($sala['cod_sala']) ?></td>
+                <td><?= htmlspecialchars($sala['nome']) ?></td>
+                <td><?= htmlspecialchars($sala['tipo_ambiente']) ?></td>
+                <td><?= htmlspecialchars($sala['capacidade_pessoas']) ?></td>
+                <td><?= htmlspecialchars($sala['bloco']) ?></td>
+                <td><?= htmlspecialchars($sala['andar']) ?></td>
+                <td><?= htmlspecialchars($sala['area_m2']) ?></td>
+                <td>
+                    <a href="dispositivos.php?cod_sala=<?= htmlspecialchars($sala['area_m2']) ?>"><button>ver dispositivos</button></a>
+                </td>
+            </tr>
         <?php endforeach; ?>
-    </div>
+    </table>
 </body>
 </html>
 

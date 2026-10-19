@@ -1,16 +1,7 @@
 <?php
 session_start();
 
-$conn = mysqli_connect(
-    "localhost",
-    "root",
-    "",
-    "fisica_bd"
-);
-
-if (!$conn) {
-    die("Falha na conexão com o banco de dados.");
-}
+include_once "conexao.php";
 
 mysqli_set_charset($conn, "utf8mb4");
 

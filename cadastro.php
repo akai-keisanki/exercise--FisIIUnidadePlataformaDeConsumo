@@ -77,7 +77,7 @@ try {
     // Avisar e redirecionar a página principal
     echo "<script>
         window.top.alert('Cadastro realizado com sucesso!');
-        window.top.location.href = '/FISICA/mapa.php';
+        window.top.location.href = '/mapa.php';
     </script>";
     exit;
 
