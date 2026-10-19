@@ -66,6 +66,15 @@ try {
     $stmt->execute();
 
     $stmt->close();
+
+    if ($perfil == "TEC") {
+        $sql_tec = "INSERT INTO UsuarioTecnico(matricula_usuario) VALUES(?)";
+        $stmt_tec = $conn->prepare($sql_tec);
+        $stmt_tec->bind_param("s", $Numero_Matricula);
+        $stmt_tec->execute();
+        $stmt_tec->close();
+    }
+
     $conn->close();
 
     echo "<script>

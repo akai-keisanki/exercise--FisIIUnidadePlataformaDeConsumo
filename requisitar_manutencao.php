@@ -62,8 +62,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         echo "<script>
             window.top.alert('Manutenção requisitada com sucesso!');
+            window.top.location.href = 'mapa.php';
         </script>";
-        header("Location: mapa.php");
         exit;
 
     } catch (mysqli_sql_exception $e) {
