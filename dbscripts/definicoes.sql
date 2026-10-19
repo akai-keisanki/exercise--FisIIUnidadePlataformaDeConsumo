@@ -22,7 +22,7 @@ CREATE TABLE UsuarioAdmin(
 );
 
 CREATE TABLE Dispositivo(
-    id_dispositivo INTEGER PRIMARY KEY,
+    id_dispositivo INTEGER AUTO_INCREMENT PRIMARY KEY,
     status VARCHAR(13) CHECK(status IN ('funcional', 'em manutencao', 'defeituoso')), 
     marca VARCHAR(64),
     nr_serie VARCHAR(128) NOT NULL,
@@ -34,7 +34,7 @@ CREATE TABLE Dispositivo(
 );
 
 CREATE TABLE Manutencao(
-    id_manutencao INTEGER PRIMARY KEY,
+    id_manutencao INTEGER AUTO_INCREMENT PRIMARY KEY,
     descricao_servico VARCHAR(512) NOT NULL,
     tipo VARCHAR(10) CHECK(tipo IN ('preventiva', 'corretiva')),
     data_manutencao DATE,
@@ -47,7 +47,7 @@ CREATE TABLE Manutencao(
 );
 
 CREATE TABLE Sala(
-    cod_sala INTEGER PRIMARY KEY,
+    cod_sala INTEGER AUTO_INCREMENT PRIMARY KEY,
     area_m2 DECIMAL(16, 3) NOT NULL,
     bloco VARCHAR(64) NOT NULL,
     andar INTEGER NOT NULL CHECK(andar >= 0),
