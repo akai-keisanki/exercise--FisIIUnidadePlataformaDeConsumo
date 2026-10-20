@@ -50,3 +50,15 @@ INSERT
         (47, 23, '2026-01-01', NULL, 'Ativo'),
         (48, 23, '2026-01-01', NULL, 'Ativo'),
         (49, 23, '2026-01-01', NULL, 'Ativo');
+
+INSERT
+    INTO Alocacao(id_dispositivo, cod_sala, data_instalacao, data_remocao, status_alocacao)
+    VALUES
+        (50, 24, '2026-01-01', NULL, 'Ativo'),
+        (51, 24, '2026-01-01', NULL, 'Ativo'),
+        (52, 25, '2026-01-01', NULL, 'Ativo'),
+        (53, 25, '2026-01-01', NULL, 'Ativo'),
+        (54, 26, '2026-01-01', NULL, 'Ativo'),
+        (55, 26, '2026-01-01', NULL, 'Ativo'),
+        (56, 28, '2026-01-01', NULL, 'Ativo'),
+        (57, 30, '2026-01-01', NULL, 'Ativo');

@@ -69,3 +69,20 @@ INSERT
         (47, 'funcional', 'Philco', 'S/N-AUD-03', 'Standard', 24000.00, 220.000000, 2360.000000, 'ar-condicionado'),
         (48, 'funcional', 'Philco', 'S/N-AUD-04', 'Standard', 24000.00, 220.000000, 2360.000000, 'ar-condicionado'),
         (49, 'funcional', 'Não especificado', 'S/N-AUD-05', 'Genérico', NULL, 127.000000, 1120.000000, 'lampada');
+
+INSERT
+    INTO Dispositivo(id_dispositivo, status, marca, nr_serie, modelo, capacidade_btu, tensao_v, potencia_w, tipo_dispositivo)
+    VALUES
+        -- Laboratório de Edificações
+        (50, 'funcional', 'Agratto', 'S/N-LED-01', 'Standard', 30000.00, 220.000000, 8800.000000, 'ar-condicionado'),
+        (51, 'funcional', 'Não especificado', 'S/N-LED-02', 'Genérico', NULL, 110.000000, 120.000000, 'outro'), -- ventiladores
+        -- Laboratório de Química
+        (52, 'funcional', 'Gree', 'S/N-LQU-01', 'Standard', 36000.00, 220.000000, 4200.000000, 'ar-condicionado'),
+        (53, 'funcional', 'HP', 'S/N-LQU-02', 'Desktop', NULL, 220.000000, 250.000000, 'outro'),
+        -- Laboratório de Biologia
+        (54, 'funcional', 'Não especificado', 'S/N-LBI-01', 'Standard', 36000.00, 220.000000, 4200.000000, 'ar-condicionado'),
+        (55, 'funcional', 'Não especificado', 'S/N-LBI-02', 'Genérico', NULL, 127.000000, 1400.000000, 'outro'), -- micro-ondas
+        -- Sala de Pesquisa
+        (56, 'funcional', 'Não especificado', 'S/N-SPE-01', 'Inverter', 12000.00, 220.000000, 1000.000000, 'ar-condicionado'),
+        -- Assistência de Alunos
+        (57, 'funcional', 'Não especificado', 'S/N-AAL-01', 'Inverter', 12000.00, 220.000000, 1000.000000, 'ar-condicionado');

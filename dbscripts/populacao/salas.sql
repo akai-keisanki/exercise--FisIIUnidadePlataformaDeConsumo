@@ -24,3 +24,16 @@ INSERT
         (21, 12.000, 'Não especificado', 0, 'fechado', NULL, 'Coordenação de Estágio'),
         (22, 15.000, 'Não especificado', 0, 'fechado', NULL, 'Sala do Audio Visual'),
         (23, 100.000, 'Não especificado', 0, 'fechado', 50, 'Auditório');
+
+INSERT
+    INTO Sala(cod_sala, area_m2, bloco, andar, tipo_ambiente, capacidade_pessoas, nome)
+    VALUES
+        (24, 45.000, 'Bloco de Laboratórios', 1, 'fechado', 30, 'Laboratório de Edificações'),
+        (25, 50.000, 'Bloco de Laboratórios', 1, 'fechado', 25, 'Laboratório de Química'),
+        (26, 50.000, 'Bloco de Laboratórios', 1, 'fechado', 25, 'Laboratório de Biologia'),
+        (27, 20.000, 'Bloco de Laboratórios', 1, 'fechado', 10, 'Laboratório de Manutenção'),
+        (28, 15.000, 'Bloco Administrativo', 1, 'fechado', 5, 'Sala de Pesquisa'),
+        (29, 12.000, 'Bloco Administrativo', 1, 'fechado', 6, 'CIPEA'),
+        (30, 15.000, 'Bloco Administrativo', 1, 'fechado', 10, 'Assistência de Alunos'),
+        (31, 20.000, 'Bloco de Convivência', 0, 'aberto', 20, 'Sala do Grêmio'),
+        (32, 25.000, 'Bloco de Apoio', 0, 'fechado', NULL, 'Almoxarifado');
