@@ -48,28 +48,28 @@ $disps = mysqli_fetch_all($resultado, MYSQLI_ASSOC);
 
     <table>
         <tr>
-            <th>ID</th>
+            <th>Tipo</th>
             <th>Status</th>
+            <th>ID</th>
+            <th>Modelo</th>
             <th>marca</th>
             <th>Nº de Série</th>
-            <th>Modelo</th>
             <th>Capacidade</th>
             <th>Tensão</th>
             <th>Potência</th>
-            <th>Tipo</th>
             <th>Ações</th>
         </tr>
         <?php foreach ($disps as $disp): ?>
             <tr>
-                <td><?= htmlspecialchars($disp['id_dispositivo']) ?></td>
+                <td><?= htmlspecialchars($disp['tipo_dispositivo']) ?></td>
                 <td><?= htmlspecialchars($disp['status']) ?></td>
+                <td><?= htmlspecialchars($disp['id_dispositivo']) ?></td>
+                <td><?= htmlspecialchars($disp['modelo']) ?></td>
                 <td><?= htmlspecialchars($disp['marca']) ?></td>
                 <td><?= htmlspecialchars($disp['nr_serie']) ?></td>
-                <td><?= htmlspecialchars($disp['modelo']) ?></td>
                 <td><?= htmlspecialchars($disp['capacidade_btu']) ?>BTU</td>
                 <td><?= htmlspecialchars($disp['tensao_v']) ?>V</td>
                 <td><?= htmlspecialchars($disp['potencia_w']) ?>W</td>
-                <td><?= htmlspecialchars($disp['tipo_dispositivo']) ?></td>
                 <td>
                     <a href="requisitar_manutencao.php?id_dispositivo=<?= htmlspecialchars($disp['id_dispositivo']) ?>"><button>requisitar manutenção</button></a>
                 </td>
