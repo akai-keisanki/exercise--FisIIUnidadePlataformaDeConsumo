@@ -101,7 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <div>
         <form action="requisitar_manutencao.php?id_dispositivo=<?= htmlspecialchars($id_dispositivo) ?>" method="POST" target="resposta">
-            <p class = >ID do dispositivo: <?= htmlspecialchars($id_dispositivo) ?> (código da sala: <a href="dispositivos.php?cod_sala=<?= htmlspecialchars($cod_sala) ?>"><?= htmlspecialchars($cod_sala) ?></a>)</p>
+            <p>ID do dispositivo: <?= htmlspecialchars($id_dispositivo) ?> (código da sala: <a href="dispositivos.php?cod_sala=<?= htmlspecialchars($cod_sala) ?>"><?= htmlspecialchars($cod_sala) ?></a>)</p>
 
             <input type="hidden" name="id_dispositivo" value="<?= htmlspecialchars($id_dispositivo) ?>">
 

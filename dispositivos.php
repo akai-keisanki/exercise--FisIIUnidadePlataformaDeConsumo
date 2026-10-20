@@ -46,6 +46,13 @@ $disps = mysqli_fetch_all($resultado, MYSQLI_ASSOC);
         <a href="mapa.php">Voltar para Salas</a>
     </p>
 
+    <?php if ($cod_sala !== null) {
+        echo '<p>' .
+            'Código da sala: ' . '<a href="dispositivos.php?cod_sala=' . $cod_sala . '">' . $cod_sala . '</a>' .
+        '</p>';
+    } ?>
+
+
     <table>
         <tr>
             <th>Tipo</th>
