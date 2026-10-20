@@ -44,7 +44,7 @@ $salas = mysqli_fetch_all($resultado, MYSQLI_ASSOC);
                 <td><?= htmlspecialchars($sala['andar']) ?></td>
                 <td><?= htmlspecialchars($sala['area_m2']) ?></td>
                 <td>
-                    <a href="dispositivos.php?cod_sala=<?= htmlspecialchars($sala['area_m2']) ?>"><button>ver dispositivos</button></a>
+                    <a href="dispositivos.php?cod_sala=<?= htmlspecialchars($sala['cod_sala']) ?>"><button>ver dispositivos</button></a>
                 </td>
             </tr>
         <?php endforeach; ?>
